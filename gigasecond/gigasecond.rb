@@ -1,10 +1,9 @@
 class Gigasecond
   def self.from(timestamp)
-    gigasecond = 10 ** 9
-    Time.at(timestamp.to_i + gigasecond)
+    timestamp + 10**9
   end
 end
 
 module BookKeeping
-  VERSION = 1
+  VERSION = 2
 end
