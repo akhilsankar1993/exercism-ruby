@@ -7,6 +7,10 @@ class HammingTest < Minitest::Test
     assert_equal 0, Hamming.compute('', '')
   end
 
+  def test_nil_strands
+    assert_equal 0, Hamming.compute(nil, nil)
+  end
+
   def test_identical_strands
     assert_equal 0, Hamming.compute('A', 'A')
   end
@@ -81,6 +85,6 @@ class HammingTest < Minitest::Test
   # http://ruby-doc.org/docs/ruby-doc-bundle/UsersGuide/rg/constants.html
 
   def test_bookkeeping
-    assert_equal 2, BookKeeping::VERSION
+    assert_equal 3, BookKeeping::VERSION
   end
 end

@@ -1,5 +1,8 @@
 class Hamming
   def self.compute(first_str, second_str)
+    first_str ||= ""
+    second_str ||= ""
+
     raise ArgumentError.new unless first_str.length == second_str.length
 
     first_chars  = first_str.split('')
@@ -12,5 +15,5 @@ class Hamming
 end
 
 module BookKeeping
-  VERSION = 2
+  VERSION = 3
 end
