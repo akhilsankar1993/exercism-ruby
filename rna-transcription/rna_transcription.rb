@@ -1,26 +1,13 @@
 class Complement
-  def self.of_dna(str)
-    mappings = {
-      A: "U",
-      C: "G",
-      T: "A",
-      G: "C"
-    }
+  def self.of_dna(input)
+    return "" if input =~ /[^ACTG]/
 
-    complements = []
-    str.split('').each do |char|
-      unless mappings.keys.include? char.to_sym
-        complements = []
-        break
-      end
-
-      complements.push(mappings[char.to_sym])
-    end
-
-    complements.join
+    # string translation mapping done by using corresponding
+    # indices of replacement and target strings. Pretty cool!
+    input.tr("CGTA", "GCAU")
   end
 end
 
 module BookKeeping
-  VERSION = 1
+  VERSION = 2
 end
