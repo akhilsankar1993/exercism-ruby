@@ -1,5 +1,6 @@
 require 'minitest/autorun'
 require_relative 'hamming'
+require_relative 'hamming_second_solution'
 
 # Common test data version: 2.0.1 f79dfd7
 class HammingTest < Minitest::Test
@@ -85,6 +86,6 @@ class HammingTest < Minitest::Test
   # http://ruby-doc.org/docs/ruby-doc-bundle/UsersGuide/rg/constants.html
 
   def test_bookkeeping
-    assert_equal 4, BookKeeping::VERSION
+    assert_equal "4b", BookKeeping::VERSION
   end
 end
