@@ -8,12 +8,10 @@ class Hamming
     first_chars  = first_str.split('')
     second_chars = second_str.split('')
 
-    # select.with_index works because we can chain enumerators in ruby
-    # Ref: https://rossta.net/blog/what-is-enumerator.html
-    first_chars.select.with_index { |char,i| char != second_chars[i] }.count
+    (0..first_chars.size).count {|i| first_chars[i] != second_chars[i]}
   end
 end
 
 module BookKeeping
-  VERSION = 3
+  VERSION = 4
 end
