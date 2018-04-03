@@ -9,14 +9,13 @@ class Raindrops
     }
 
   def self.convert(input)
-    mapped_output = MAPPINGS.keys.map do |factor|
-      MAPPINGS[factor] if input % factor == 0
-    end
+    mapped_output =
+      MAPPINGS.keys.map { |factor| MAPPINGS[factor] if input % factor == 0 }.join
 
-    mapped_output.join.empty? ? input.to_s : mapped_output.join
+    mapped_output.empty? ? input.to_s : mapped_output
   end
 end
 
 module BookKeeping
-  VERSION = 3
+  VERSION = 4
 end
