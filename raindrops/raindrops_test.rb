@@ -4,7 +4,6 @@ require_relative 'raindrops'
 # Common test data version: 1.0.0 9db5371
 class RaindropsTest < Minitest::Test
   def test_the_sound_for_1_is_1
-    # skip
     assert_equal "1", Raindrops.convert(1)
   end
 
@@ -94,6 +93,6 @@ class RaindropsTest < Minitest::Test
   # http://ruby-doc.org/docs/ruby-doc-bundle/UsersGuide/rg/constants.html
 
   def test_bookkeeping
-    assert_equal 1, BookKeeping::VERSION
+    assert_equal 2, BookKeeping::VERSION
   end
 end
