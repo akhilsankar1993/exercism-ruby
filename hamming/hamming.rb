@@ -1,17 +1,14 @@
 class Hamming
-  def self.compute(first_str, second_str)
-    first_str ||= ""
-    second_str ||= ""
+  def self.compute(first, second)
+    first ||= ""
+    second ||= ""
 
-    raise ArgumentError.new unless first_str.length == second_str.length
+    raise ArgumentError.new unless first.length == second.length
 
-    first_chars  = first_str.split('')
-    second_chars = second_str.split('')
-
-    (0..first_chars.size).count {|i| first_chars[i] != second_chars[i]}
+    first.each_char.with_index.count { |char, i| char != second.chars[i] }
   end
 end
 
 module BookKeeping
-  VERSION = 4
+  VERSION = 5
 end
