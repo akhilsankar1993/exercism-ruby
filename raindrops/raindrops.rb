@@ -13,12 +13,10 @@ class Raindrops
       MAPPINGS[factor] if input % factor == 0
     end
 
-    return input.to_s if mapped_output.join.empty?
-
-    mapped_output.join
+    mapped_output.join.empty? ? input.to_s : mapped_output.join
   end
 end
 
 module BookKeeping
-  VERSION = 2
+  VERSION = 3
 end
