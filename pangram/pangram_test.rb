@@ -86,6 +86,6 @@ class PangramTest < Minitest::Test
   end
 
   def test_solution_version
-    assert_equal 1, BookKeeping::SOLUTION_VERSION
+    assert_equal 2, BookKeeping::SOLUTION_VERSION
   end
 end

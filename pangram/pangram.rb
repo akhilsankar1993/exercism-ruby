@@ -1,19 +1,11 @@
-require 'pry'
 class Pangram
   def self.pangram?(input)
     input = input.downcase
-    pangram = true
-
-    ('a'..'z').each_with_index do |char|
-      return false unless input.include? char
-      
-      return true if char == 'z'
-    end
+    ('a'..'z').all? {|char| input.include? char}
   end
-
 end
 
 module BookKeeping
   VERSION = 6
-  SOLUTION_VERSION = 1
+  SOLUTION_VERSION = 2
 end
