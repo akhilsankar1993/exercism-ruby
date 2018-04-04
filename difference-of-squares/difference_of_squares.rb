@@ -1,18 +1,17 @@
-require 'pry'
 class Squares
   def initialize(input)
-    @input = input
+    @range = 0..input
   end
 
   def square_of_sum
-    sum = (0..@input).inject(&:+)
+    sum = @range.inject(&:+)
     sum**2
   end
 
   def sum_of_squares
     square = lambda {|num| num ** 2 }
 
-    (0..@input).map(&square).inject(&:+)
+    @range.map(&square).inject(&:+)
   end
 
   def difference
@@ -21,5 +20,5 @@ class Squares
 end
 
 module BookKeeping
-  VERSION = 1
+  VERSION = 2
 end
