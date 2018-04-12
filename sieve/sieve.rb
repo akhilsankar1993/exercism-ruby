@@ -1,29 +1,28 @@
 require 'pry'
 
 class Sieve
-  def initialize(input)
-    @input = input
+  def initialize(max)
+    @max = max
   end
   
   def primes
-    return [] if @input < 2
+    return [] if @max < 2
     
-    return [2] if @input == 2
+    return [2] if @max == 2
     
     composites = []
     
-    
-    (2..@input).each do |test_num|
+    (2..@max).each do |test_num|
       multiplier = 2
       
-      while(test_num * multiplier <= @input) do
+      while(test_num * multiplier <= @max) do
         product = test_num * multiplier
         composites << product unless composites.include? product
         multiplier += 1
       end
     end
     
-    [*2..@input] - composites
+    [*2..@max] - composites
   end
 end
 
