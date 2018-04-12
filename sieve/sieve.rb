@@ -1,17 +1,29 @@
+require 'pry'
+
 class Sieve
   def initialize(input)
     @input = input
   end
-
+  
   def primes
-    expected = []
-    expected.push(2) if @input >= 2
-
-    (1..@input).each do |num|
-      if num % 
+    return [] if @input < 2
+    
+    return [2] if @input == 2
+    
+    composites = []
+    
+    
+    (2..@input).each do |test_num|
+      multiplier = 2
+      
+      while(test_num * multiplier <= @input) do
+        product = test_num * multiplier
+        composites << product unless composites.include? product
+        multiplier += 1
+      end
     end
-
-    expected
+    
+    [*2..@input] - composites
   end
 end
 
